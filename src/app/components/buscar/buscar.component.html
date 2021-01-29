@@ -1,1 +1,26 @@
-<p>buscar works!</p>
+<div class="container main-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="">Buscar:</label>
+                <br>
+                <input [(ngModel)]="buscar" class="form-control" (keyup.enter)="buscarPelicula()" name="buscar"
+                    placeholder="Buscar película" type="text">
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let pelicula of peliService.peliculas">
+          <div class="card">
+            <img [src]="pelicula|peliculaImagen" class="card-img-top" alt="pelicula.original_title">
+            <div class="card-body">
+              <h5 class="card-title">{{pelicula.original_title}}</h5>
+              <p class="card-text text-justify">{{pelicula.overview | slice:0:300}}....</p>
+                <button class="btn btn-outline-primary btn-block" type="button">Ver más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

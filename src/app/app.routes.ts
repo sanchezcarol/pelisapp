@@ -8,6 +8,7 @@ import { InfoComponent } from "./components/info/info.component";
 const APP_ROUTES: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'search', component: BuscarComponent},  
+    {path: 'buscar/:text', component: BuscarComponent},  
     {path: 'info', component: InfoComponent},  
     {path:'**', pathMatch:'full', redirectTo: 'home'}
 ]

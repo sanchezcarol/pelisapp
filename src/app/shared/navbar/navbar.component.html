@@ -13,8 +13,8 @@
             <a class="nav-link" routerLink="/search">Buscar</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" (ngSubmit)="buscarPelicula(buscarTexto.value)">
+          <input class="form-control me-2" type="search" placeholder="Search" #buscarTexto>
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
