@@ -1,0 +1,14 @@
+<div class="jumbotron jumbotron-fluid" style="background-color: azure;">
+    <p>AQUI VA UN HEADER</p>
+</div>
+
+
+<div class="container">
+    <br>
+    <app-galeria [peliculas]="cartelera|slice:0:6" titulo="Películas en Cartelera"></app-galeria>
+    <app-galeria [peliculas]="populares|slice:0:6" titulo="Películas Populares"></app-galeria>
+    <app-galeria [peliculas]="infantiles|slice:0:6" titulo="Películas Populares Infantiles"></app-galeria>
+
+</div>
+
+<br><br>
