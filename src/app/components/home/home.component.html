@@ -1,7 +1,16 @@
-<div class="jumbotron jumbotron-fluid" style="background-color: azure;">
+<!-- <div class="jumbotron jumbotron-fluid" style="background-color: azure;">
     <p>AQUI VA UN HEADER</p>
-</div>
+</div> -->
 
+<header class="header-class">
+    <div class="container center" >
+        <form class="d-flex" (ngSubmit)="buscarPelicula(buscarTexto.value)">
+        <input class="form-control me-2" type="search" placeholder="Buscar película" #buscarTexto>
+        <button class="btn btn-warning" type="submit">Buscar</button>
+      </form>
+    </div>
+    
+</header>
 
 <div class="container">
     <br>

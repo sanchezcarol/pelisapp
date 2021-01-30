@@ -1,5 +1,6 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   infantiles:any
   populares:any
 
-  constructor(private pelis: ServicesService) {
+  constructor(private pelis: ServicesService,private router:Router) {
     
     this.pelis.getCartelera()
     .subscribe(res => { 
@@ -31,10 +32,14 @@ export class HomeComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-    
-    
-        
+  ngOnInit(): void {       
+  }
+
+  buscarPelicula(texto:string){
+
+    if(texto.length==0) return
+
+    this.router.navigate(['search',texto])
   }
 
 

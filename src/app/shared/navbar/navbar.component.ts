@@ -8,16 +8,11 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  buscarPelicula(texto:string){
-
-    if(texto.length==0) return
-
-    this.router.navigate(['buscar',texto])
-  }
+  
 
 }

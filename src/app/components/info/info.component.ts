@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-info',
@@ -7,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  backTo:string = ""
+  text:string = ""
+  pelicula:any =""
+  
+  constructor(private router: ActivatedRoute, public peliService: ServicesService) {
+    this.router.params.subscribe(params => {
+      
+      this.backTo = params.pag
+      if(params['text']) this.text = params['text']
+      
+      this.peliService.getPelicula(params['id']).subscribe(peli => { this.pelicula = peli,  console.log(this.pelicula);  })
+    })
+  }
 
   ngOnInit(): void {
   }

@@ -1,1 +1,26 @@
-<p>info works!</p>
+<div *ngIf="pelicula" class="container main-container animated fadeIn fast">
+
+    <h1>{{pelicula.original_title}}</h1>
+    <hr>
+    <br><br>
+    <div class="row">
+        <div class="col-md-5">
+            <img class="img-thumbnail img-fluid" [src]="pelicula|peliculaImagen:true">
+        </div>
+        <div class="col-md-7">
+            <h3>Sinopsis</h3>
+            <hr>
+            <p>{{pelicula.overview}}</p>
+            <p class="text-justify">{{pelicula.tagline}}</p>
+            <p>Popularidad: <span class="badge bg-primary">{{pelicula.popularity | number:".0-0"}}</span>
+                <br>
+                Votos: <span class="badge bg-primary">{{pelicula.vote_average}}</span>
+            </p>
+            <br>
+            
+            <button [routerLink]="['/'+backTo, text]" class="btn btn-outline-danger">Regresar</button>
+        </div>
+    </div>
+
+
+</div>

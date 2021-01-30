@@ -9,12 +9,14 @@ import { ServicesService } from 'src/app/services/services.service';
 })
 export class BuscarComponent implements OnInit {
 
-  buscar: string = ""
+  buscar: string 
 
   constructor(private router: ActivatedRoute, public peliService: ServicesService) {
     this.router.params.subscribe(params => {
-      if (params['text'])
+      if (params['text']){
+        this.buscar = params['text']
         this.peliService.buscarPelicula(params['text']).subscribe()
+      }
     })
   }
 
